@@ -12,27 +12,23 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: var(--text-color);
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
   background-color: #ffffff;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
-.container {
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-  /* outline: 2px solid tomato; */
-}
-.header {
-  padding-top: 24px;
-  padding-bottom: 25px;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .logo {
   font-family: 'Raleway';
@@ -40,7 +36,6 @@ p {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  letter-spacing: 0.03em;
   text-decoration: none;
   color: #000000;
   display: inline-block;
@@ -53,20 +48,20 @@ p {
   color: #ffffff;
 }
 
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .nav-link {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--primary-text-color);
-  text-decoration: none;
+  color: inherit;
 }
 
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
 .nav-link:hover,
 .nav-link:focus {
   color: var(--accent-color);
@@ -87,7 +82,7 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
-  color: inherit;
+  color: var(--text-color);
 }
 
 .contacts:hover,
@@ -97,19 +92,15 @@ p {
 
 .hero {
   background-color: var(--sections-background-color);
-  padding: 200px 452px;
-  width: 1600px;
 }
 .hero-title {
   font-family: 'Roboto';
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--hero-title-color);
-  margin-bottom: 30px;
 }
 
 .button-order {
@@ -123,96 +114,62 @@ p {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  text-align: center;
   letter-spacing: 0.06em;
   color: var(--hero-title-color);
   display: inline-block;
 }
 
 .section-title {
-  font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--primary-text-color);
-  margin-bottom: 50px;
 }
 .section-subtitle {
   font-size: 14px;
-  font-weight: 700;
   line-height: 1.14;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--primary-text-color);
-  margin-bottom: 10px;
 }
 
-.all-section {
-  margin-bottom: 94px;
+.features-list-item p {
+  color: var(--text-color);
+  line-height: 1.71;
 }
 
 .section-team {
-  padding-top: 94px;
-  padding-bottom: 94px;
   background-color: var(--section-light-background);
 }
-/* .team-card {
-  text-align: center;
-  background: var(--team-card-bg);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-} */
+
 .footer {
-  width: 1600px;
-  padding-top: 60px;
-  padding-bottom: 60px;
   background-color: var(--sections-background-color);
 }
-.team-card-img {
-  padding-bottom: 30px;
-}
+
 .team-card-name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--primary-text-color);
-  padding-bottom: 10px;
 }
+
 .team-card-text {
-  padding-bottom: 30px;
-  text-align: center;
+  color: var(--text-color);
+  line-height: 1.19;
 }
-.adress-link {
+.adress-link,
+.adress-map-link {
   font-style: normal;
   text-decoration: none;
   line-height: 1.71;
-  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   display: inline-block;
-  margin-bottom: 9px;
 }
 .adress-link:hover,
 .adress-link:focus {
   color: var(--accent-color);
 }
-.white-color {
+.adress-map-link {
   color: var(--hero-title-color);
-}
-.footer-logo {
-  padding-bottom: 20px;
 }
 
 /* Стили для стр портфолио */
 .filter__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 62px;
-  margin-bottom: 50px;
   list-style-type: none;
 }
 .filter__button {
@@ -224,11 +181,9 @@ p {
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
-  letter-spacing: 0.03em;
   border: none;
-  color: var(--main-color);
+  color: var(--primary-text-color);
   padding: 6px 22px 6px 22px;
-  margin-right: 8px;
   cursor: pointer;
 }
 
@@ -248,32 +203,16 @@ p {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.portfolio__list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
 .card-title {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   text-transform: none;
-  color: var(--primary-text-color);
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0;
 }
 
-.portfolio__item:not(:nth-child(3n + 3)) {
-  margin-right: 30px;
-}
 .portfolio__item p {
   font-size: 16px;
   line-height: 1.88;
-  letter-spacing: 0.03em;
   color: var(--text-color);
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0;
 }
