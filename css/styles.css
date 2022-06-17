@@ -150,6 +150,7 @@ body {
 
 .team-card-text {
   color: var(--text-color);
+  font-size: 16px;
   line-height: 1.19;
 }
 .adress-link,
